@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 6790
+  controlID: 79
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -657,9 +657,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 103bffff
+      m_SelectedIDs: bc690000
       m_LastClickedID: 0
-      m_ExpandedIDs: 0aafffffa0f8ffff34fbffff
+      m_ExpandedIDs: 34fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -795,7 +795,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -31224
+  m_LastSelectedObjectID: -50416
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -864,22 +864,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animations
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Animations
+  - Assets
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Desktop\Unity\Git\Yandex_Runner\Yandex_RunnerGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 586f0000
-    m_LastClickedID: 28504
-    m_ExpandedIDs: 00000000fe67000000ca9a3b
+    m_SelectedIDs: 2a680000
+    m_LastClickedID: 26666
+    m_ExpandedIDs: 000000002a68000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -907,7 +907,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fe67000000ca9a3b
+    m_ExpandedIDs: 000000002a680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -932,9 +932,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 103bffff
-    m_LastClickedInstanceID: -50416
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: bc690000
+    m_LastClickedInstanceID: 27068
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300000000000074600000347900005ea10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -982,8 +982,8 @@ MonoBehaviour:
     y: 0
     width: 531
     height: 939
-  m_MinSize: {x: 275, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
