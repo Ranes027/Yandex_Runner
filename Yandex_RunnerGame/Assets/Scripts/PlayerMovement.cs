@@ -6,17 +6,21 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Player Settings")]
     [SerializeField] private float _speed;
+    [SerializeField] private Animator _animator;
+
     [Header("Limiters")]
     [SerializeField] private float _roadWidth;
 
     private float _oldMousePositionX;
     private float _eulerY;
 
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             _oldMousePositionX = Input.mousePosition.x;
+
+            _animator.SetBool("Run", true);
         }
 
         if (Input.GetMouseButton(0))
@@ -31,6 +35,11 @@ public class PlayerMovement : MonoBehaviour
             _eulerY += deltaX;
             _eulerY = Mathf.Clamp(_eulerY, -70, 70);
             transform.eulerAngles = new Vector3(0, _eulerY, 0);
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            _animator.SetBool("Run", false);
         }
     }
 }
