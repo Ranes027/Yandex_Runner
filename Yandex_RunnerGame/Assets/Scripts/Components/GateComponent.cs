@@ -27,6 +27,7 @@ public class GateComponent : MonoBehaviour
             {
                 playerModifier.AddHeight(_value);
             }
+            Destroy(gameObject);
         }
     }
 }
