@@ -18,11 +18,11 @@ public class PlayerModifier : MonoBehaviour
     private float _widthMultiplier = 0.0005f;
     private float _heightMultiplier = 0.01f;
 
-    private void Update()
+    void Update()
     {
         float offsetY = _height * _heightMultiplier + 0.17f;
         _topSpine.position = _bottomSpine.position + new Vector3(0, offsetY, 0);
-        _colliderTransform.localScale = new Vector3(1, 1.85f + _height * _heightMultiplier, 1);
+        _colliderTransform.localScale = new Vector3(1, 1.84f + _height * _heightMultiplier, 1);
     }
 
     public void AddWidth(int value)
