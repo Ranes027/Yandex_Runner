@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _levelName;
 
+    [SerializeField] private CollectibleManager _collectibleManager;
+
     private void Start()
     {
         _levelName.text = SceneManager.GetActiveScene().name;
@@ -36,6 +38,8 @@ public class GameManager : MonoBehaviour
         int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
         if (nextLevel < SceneManager.sceneCountInBuildSettings)
         {
+            _collectibleManager.SaveToProgress();
+
             SceneManager.LoadScene(nextLevel);
         }
     }
