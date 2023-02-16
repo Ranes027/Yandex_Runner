@@ -28,11 +28,37 @@ public class PlayerModifier : MonoBehaviour
     public void AddWidth(int value)
     {
         _width += value;
-        _renderer.material.SetFloat("_PushValue", _width * _widthMultiplier);
+        UpdateWidth();
     }
 
     public void AddHeight(int value)
     {
         _height += value;
+    }
+
+    public void HitBarrier(int value)
+    {
+        if (_height > 0)
+        {
+            _height -= value;
+        }
+        else if (_width > 0)
+        {
+            _width -= value;
+            UpdateWidth();
+        }
+        else
+        {
+            Die();
+        }
+    }
+
+    private void UpdateWidth()
+    {
+        _renderer.material.SetFloat("_PushValue", _width * _widthMultiplier);
+    }
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }

@@ -1090,6 +1090,7 @@ GameObject:
   - component: {fileID: 951224798}
   - component: {fileID: 951224797}
   - component: {fileID: 951224799}
+  - component: {fileID: 951224800}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1164,6 +1165,19 @@ MonoBehaviour:
   _topSpine: {fileID: 1838653605}
   _bottomSpine: {fileID: 1233398151}
   _colliderTransform: {fileID: 835364719}
+--- !u!114 &951224800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951224795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6f45fc80019a84e9c08b37f2caff31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerMove: {fileID: 0}
 --- !u!1 &1047557295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,7 +2014,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1520362365}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
