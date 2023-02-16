@@ -10,10 +10,11 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _startMenu;
     [SerializeField] private GameObject _finishWindow;
-
+    
     [SerializeField] private TextMeshProUGUI _levelName;
-
+   
     [SerializeField] private CollectibleManager _collectibleManager;
+    [SerializeField] private Shop _shop;
 
     private void Start()
     {
