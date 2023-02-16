@@ -33,7 +33,7 @@ RectTransform:
   m_Children:
   - {fileID: 2090808315}
   m_Father: {fileID: 1350720917673765128}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -372,6 +372,57 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &5699142711115574888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5930573063480446512}
+  - component: {fileID: 8053367307280306907}
+  m_Layer: 0
+  m_Name: Shop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5930573063480446512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5699142711115574888}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 200.55225, y: 45.20416, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1350720917673765128}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8053367307280306907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5699142711115574888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96411a10eb730c4e9479ace1a3750b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collectibleManager: {fileID: 8905589504072577519}
+  _widthPrice: 5
+  _heightPrice: 5
+  _widthValue: 20
+  _heightValue: 20
+  _widthText: {fileID: 8905589502586551674}
+  _heightText: {fileID: 8905589503881164249}
 --- !u!1 &6584552750389825438
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +588,7 @@ Transform:
   m_Children:
   - {fileID: 8905589503601956336}
   - {fileID: 6238316292735526705}
+  - {fileID: 5930573063480446512}
   - {fileID: 8905589502935499985}
   - {fileID: 8905589504072577518}
   - {fileID: 8905589503082584616}
@@ -560,7 +612,7 @@ GameObject:
   - component: {fileID: 8905589502586551673}
   - component: {fileID: 8905589502586551674}
   m_Layer: 5
-  m_Name: Text (UpdatePrice)
+  m_Name: Text (WidhtPrice)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -713,7 +765,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1350720917673765128}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8905589502935499986
 MonoBehaviour:
@@ -731,6 +783,7 @@ MonoBehaviour:
   _finishWindow: {fileID: 325882110}
   _levelName: {fileID: 7449386323738079250}
   _collectibleManager: {fileID: 8905589504072577519}
+  _shop: {fileID: 0}
 --- !u!1 &8905589503082584618
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,7 +815,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1350720917673765128}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!108 &8905589503082584617
 Light:
@@ -957,7 +1010,7 @@ RectTransform:
   - {fileID: 8905589504596240041}
   - {fileID: 605484294371090851}
   m_Father: {fileID: 1350720917673765128}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1147,7 +1200,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8905589503243318662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8053367307280306907}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyWidth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8905589503260562205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,7 +1335,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8905589503260562202}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8053367307280306907}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyHeight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8905589503268715692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,7 +1379,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1350720917673765128}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8905589503268715690
 MonoBehaviour:
@@ -1673,7 +1750,7 @@ RectTransform:
   - {fileID: 8905589503243318664}
   - {fileID: 8905589503260562204}
   m_Father: {fileID: 1350720917673765128}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1753,7 +1830,7 @@ GameObject:
   - component: {fileID: 8905589503881164248}
   - component: {fileID: 8905589503881164249}
   m_Layer: 5
-  m_Name: Text (UpdatePrice)
+  m_Name: Text (HeightPrice)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1906,7 +1983,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1350720917673765128}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8905589504072577519
 MonoBehaviour:
@@ -2027,7 +2104,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1350720917673765128}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8905589504596240042
 GameObject:
