@@ -8,6 +8,9 @@ public class CameraMovement : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = _target.position;
+        if(_target != null)
+        {
+            transform.position = _target.position;
+        }
     }
 }
