@@ -25,4 +25,10 @@ public class CollectibleManager : MonoBehaviour
     {
         Progress.Instance.Coins = NumberOfCollectibles;
     }
+
+    public void SpendMoney(int value)
+    {
+        NumberOfCollectibles -= value;
+        _valueText.text = NumberOfCollectibles.ToString();
+    }
 }
