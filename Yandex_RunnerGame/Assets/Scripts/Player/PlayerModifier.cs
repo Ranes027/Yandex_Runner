@@ -15,6 +15,8 @@ public class PlayerModifier : MonoBehaviour
 
     [SerializeField] private Transform _colliderTransform;
 
+    [SerializeField] private AudioSource _increaseSound;
+
     private float _widthMultiplier = 0.0005f;
     private float _heightMultiplier = 0.01f;
 
@@ -34,7 +36,7 @@ public class PlayerModifier : MonoBehaviour
     public void AddWidth(int value)
     {
         _width += value;
-        UpdateWidth();
+        UpdateWidth();        
     }
 
     public void SetWidth(int value)
@@ -46,6 +48,11 @@ public class PlayerModifier : MonoBehaviour
     public void AddHeight(int value)
     {
         _height += value;
+        
+        if (value > 0)
+        {
+            _increaseSound.Play();
+        }
     }
 
     public void SetHeight(int value)

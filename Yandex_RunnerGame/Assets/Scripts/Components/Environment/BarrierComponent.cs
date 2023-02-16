@@ -6,6 +6,8 @@ public class BarrierComponent : MonoBehaviour
 {   
     [SerializeField] int _barrierDamage;
 
+    [SerializeField] GameObject _bricksEffectPrefab;
+
     private void OnTriggerEnter(Collider other)
     {
         PlayerModifier playerModifier = other.attachedRigidbody.GetComponent<PlayerModifier>();
@@ -14,6 +16,8 @@ public class BarrierComponent : MonoBehaviour
         {
             playerModifier.HitBarrier(_barrierDamage);
             Destroy(gameObject);
+
+            Instantiate(_bricksEffectPrefab, transform.position, transform.rotation);
         }
     }
 }
