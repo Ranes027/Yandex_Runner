@@ -6,8 +6,11 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _startMenu;
 
-    public void Play()
+    public void StartGame()
     {
         _startMenu.SetActive(false);
+
+        FindObjectOfType<PlayerBehaviour>().Play();
+
     }
 }
