@@ -31,9 +31,20 @@ public class PlayerModifier : MonoBehaviour
         UpdateWidth();
     }
 
+    public void SetWidth(int value)
+    {
+        _width = value;
+        UpdateWidth();
+    }
+
     public void AddHeight(int value)
     {
         _height += value;
+    }
+
+    public void SetHeight(int value)
+    {
+        _height = value;
     }
 
     public void HitBarrier(int value)
