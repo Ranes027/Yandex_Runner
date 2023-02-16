@@ -5,13 +5,24 @@ using TMPro;
 
 public class CollectibleManager : MonoBehaviour
 {
-    [SerializeField] private int _numberOfCollectiblesInLevel;
-
     [SerializeField] private TextMeshProUGUI _valueText;
+
+    public int NumberOfCollectibles;
+
+    private void Start()
+    {
+        NumberOfCollectibles = Progress.Instance.Coins;
+        _valueText.text = NumberOfCollectibles.ToString();
+    }
 
     public void AddOne()
     {
-        _numberOfCollectiblesInLevel ++;
-        _valueText.text = _numberOfCollectiblesInLevel.ToString();
+        NumberOfCollectibles++;
+        _valueText.text = NumberOfCollectibles.ToString();
+    }
+
+    public void SaveToProgress()
+    {
+        Progress.Instance.Coins = NumberOfCollectibles;
     }
 }
