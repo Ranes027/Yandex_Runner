@@ -18,6 +18,12 @@ public class PlayerModifier : MonoBehaviour
     private float _widthMultiplier = 0.0005f;
     private float _heightMultiplier = 0.01f;
 
+    private void Start()
+    {
+        SetWidth(Progress.Instance.Width);
+        SetHeight(Progress.Instance.Height);
+    }
+
     void Update()
     {
         float offsetY = _height * _heightMultiplier + 0.17f;
