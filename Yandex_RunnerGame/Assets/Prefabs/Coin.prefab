@@ -60,6 +60,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 180
+  _effectPrefab: {fileID: 1845240806346120, guid: 2bc763868beafcf44918b0a3740f17d8,
+    type: 3}
 --- !u!1001 &9194908093540223022
 PrefabInstance:
   m_ObjectHideFlags: 0
