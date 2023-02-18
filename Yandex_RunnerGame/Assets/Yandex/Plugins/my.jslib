@@ -5,12 +5,39 @@ mergeInto(LibraryManager.library, {
     console.log("Hello, world!");
   },
 
-PlayerData: function () {
-  MyGameInstance.SendMessage('Yandex', 'SetName', player.getName());
-  MyGameInstance.SendMessage('Yandex', 'SetPhoto', player.getPhoto("medium"));
+  PlayerData: function () {
+    myGameInstance.SendMessage('Yandex', 'SetName', player.getName());
+    myGameInstance.SendMessage('Yandex', 'SetPhoto', player.getPhoto("medium"));
 
-    console.log(player.getName());
-    console.log(player.getPhoto("medium"))
+      console.log(player.getName());
+      console.log(player.getPhoto("medium"))
+    },
+
+    RateGame: function () {
+    ysdk.feedback.canReview()
+        .then(({ value, reason }) => {
+            if (value) {
+                ysdk.feedback.requestReview()
+                    .then(({ feedbackSent }) => {
+                        console.log(feedbackSent);
+                    })
+            } else {
+                console.log(reason)
+            }
+        })
+  },
+
+  SaveExtern: function (data) {
+    var dataString = UTF8ToString(data);
+    var myobj = JSON.parse(dataString);
+    player setData(myobj);
+  },
+
+  LoadExtern: function () {
+    player.getData().then(_data => {
+      const myJSON = JSON.stringify(_data);
+      myGameInstance.SendMessage('Progress', 'SetPlayerInfo', myJSON);
+    });
   },
 
 });
