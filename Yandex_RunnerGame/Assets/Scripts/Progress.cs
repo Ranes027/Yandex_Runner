@@ -24,7 +24,7 @@ public class Progress : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void LoadExtern();
 
-    [SerializeField] private TextMeshProUGUI _playerInfoText; 
+    [SerializeField] private TextMeshProUGUI _playerInfoText;
 
     public static Progress Instance;
 
@@ -36,6 +36,7 @@ public class Progress : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
             Instance = this;
+            LoadExtern();
         }
         else
         {
@@ -46,6 +47,7 @@ public class Progress : MonoBehaviour
     public void Save()
     {
         string jsonString = JsonUtility.ToJson(PlayerInfo);
+
         SaveExtern(jsonString);
     }
 
