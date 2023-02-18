@@ -11,7 +11,7 @@ public class CollectibleManager : MonoBehaviour
 
     private void Start()
     {
-        NumberOfCollectibles = Progress.Instance.Coins;
+        NumberOfCollectibles = Progress.Instance.PlayerInfo.Coins;
         _valueText.text = NumberOfCollectibles.ToString();
     }
 
@@ -23,7 +23,7 @@ public class CollectibleManager : MonoBehaviour
 
     public void SaveToProgress()
     {
-        Progress.Instance.Coins = NumberOfCollectibles;
+        Progress.Instance.PlayerInfo.Coins = NumberOfCollectibles;
     }
 
     public void SpendMoney(int value)

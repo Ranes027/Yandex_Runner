@@ -22,8 +22,8 @@ public class PlayerModifier : MonoBehaviour
 
     private void Start()
     {
-        SetWidth(Progress.Instance.Width);
-        SetHeight(Progress.Instance.Height);
+        SetWidth(Progress.Instance.PlayerInfo.Width);
+        SetHeight(Progress.Instance.PlayerInfo.Height);
     }
 
     void Update()

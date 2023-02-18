@@ -1,12 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using TMPro;
 using UnityEngine;
 
-public class Progress : MonoBehaviour
+[System.Serializable]
+public class PlayerInfo
 {
+    public int Level;
+
     public int Coins;
     public int Width;
     public int Height;
+}
+
+public class Progress : MonoBehaviour
+{
+    public PlayerInfo PlayerInfo;
+
+    [DllImport("__Internal")]
+    private static extern void SaveExtern(string data);
+
+    [DllImport("__Internal")]
+    private static extern void LoadExtern();
+
+    [SerializeField] private TextMeshProUGUI _playerInfoText; 
 
     public static Progress Instance;
 
@@ -23,5 +41,18 @@ public class Progress : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void Save()
+    {
+        string jsonString = JsonUtility.ToJson(PlayerInfo);
+        SaveExtern(jsonString);
+    }
+
+    public void SetPlayerInfo(string value)
+    {
+        PlayerInfo = JsonUtility.FromJson<PlayerInfo>(value);
+        _playerInfoText.text = PlayerInfo.Coins + "\n" + PlayerInfo.Width + "\n" + PlayerInfo.Height + "\n" + PlayerInfo.Level;
+
     }
 }

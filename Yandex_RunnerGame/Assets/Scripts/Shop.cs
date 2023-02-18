@@ -30,10 +30,10 @@ public class Shop : MonoBehaviour
         if (_collectibleManager.NumberOfCollectibles >= _widthPrice)
         {
             _collectibleManager.SpendMoney(_widthPrice);
-            Progress.Instance.Coins = _collectibleManager.NumberOfCollectibles;
-            Progress.Instance.Width += _widthValue;
+            Progress.Instance.PlayerInfo.Coins = _collectibleManager.NumberOfCollectibles;
+            Progress.Instance.PlayerInfo.Width += _widthValue;
 
-            _playerModifier.SetWidth(Progress.Instance.Width);
+            _playerModifier.SetWidth(Progress.Instance.PlayerInfo.Width);
         }
     }
 
@@ -42,10 +42,10 @@ public class Shop : MonoBehaviour
         if (_collectibleManager.NumberOfCollectibles >= _heightPrice)
         {
             _collectibleManager.SpendMoney(_heightPrice);
-            Progress.Instance.Coins = _collectibleManager.NumberOfCollectibles;
-            Progress.Instance.Height += _heightValue;
+            Progress.Instance.PlayerInfo.Coins = _collectibleManager.NumberOfCollectibles;
+            Progress.Instance.PlayerInfo.Height += _heightValue;
 
-            _playerModifier.SetHeight(Progress.Instance.Height);
+            _playerModifier.SetHeight(Progress.Instance.PlayerInfo.Height);
         }
     }
 
