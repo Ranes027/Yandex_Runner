@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _levelName;
    
     [SerializeField] private CollectibleManager _collectibleManager;
-    [SerializeField] private Shop _shop;
 
     private void Start()
     {
