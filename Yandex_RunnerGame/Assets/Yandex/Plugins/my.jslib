@@ -54,4 +54,38 @@ mergeInto(LibraryManager.library, {
     return buffer;
   },
 
+  ShowAdv : function(){
+    ysdk.adv.showFullscreenAdv({
+    callbacks: {
+        onClose: function(wasShown) {
+          console.log("Adv closed");
+          // some action after close
+        },
+        onError: function(error) {
+          // some action on error
+        }
+    }
+    })
+  },
+
+  AddCoinsExtern : function(){
+    ysdk.adv.showRewardedVideo({
+    callbacks: {
+        onOpen: () => {
+          console.log('Video ad open.');
+        },
+        onRewarded: () => {
+          console.log('Rewarded!');
+          myGameInstance.SendMessage("CollectibleManager", "AddCoins");
+        },
+        onClose: () => {
+          console.log('Video ad closed.');
+        }, 
+        onError: (e) => {
+          console.log('Error while open video ad:', e);
+        }
+    }
+})
+  },
+
 });

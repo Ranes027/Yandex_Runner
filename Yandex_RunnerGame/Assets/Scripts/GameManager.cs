@@ -8,6 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [DllImport("__Internal")]
+    private static extern void ShowAdv();
+
     [SerializeField] private GameObject _startMenu;
     [SerializeField] private GameObject _finishWindow;
 
@@ -17,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        ShowAdv();
         _levelName.text = SceneManager.GetActiveScene().name;
     }
 

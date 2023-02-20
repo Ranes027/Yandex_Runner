@@ -44,6 +44,16 @@ public class Progress : MonoBehaviour
         }
     }
 
+    //временно, для сброса прогресса в черновике
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            PlayerInfo = new PlayerInfo();
+            Save();
+        }
+    }
+
     public void Save()
     {
         string jsonString = JsonUtility.ToJson(PlayerInfo);
