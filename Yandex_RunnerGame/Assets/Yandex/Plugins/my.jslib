@@ -23,20 +23,35 @@ mergeInto(LibraryManager.library, {
                 console.log(reason)
             }
         })
-    },
+  },
 
 
   SaveExtern: function(data) {
       var dataString = UTF8ToString(data);
       var myobj = JSON.parse(dataString);
       player.setData(myobj);
-    },
+  },
 
-    LoadExtern: function(){
+  LoadExtern: function(){
       player.getData().then(_data => {
           const myJSON = JSON.stringify(_data);
           myGameInstance.SendMessage('Progress', 'SetPlayerInfo', myJSON);
       });
+  },
+
+  SetToLeaderboard : function(value){
+    ysdk.getLeaderboards()
+      .then(lb => {
+        lb.setLeaderboardScore('Height', value);
+    });
+  },
+
+  GetLang : function(){
+    var lang = ysdk.environment.i18n.lang;
+    var bufferSize = lengthBytesUTF8(lang) + 1;
+    var buffer = _malloc(bufferSize);
+    stringToUTF8(lang, buffer, bufferSize);
+    return buffer;
   },
 
 });

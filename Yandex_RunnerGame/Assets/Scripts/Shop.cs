@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
 
@@ -15,6 +16,9 @@ public class Shop : MonoBehaviour
     [Header("Stats Text")]
     [SerializeField] private TextMeshProUGUI _widthText;
     [SerializeField] private TextMeshProUGUI _heightText;
+
+    [DllImport("__Internal")]
+    private static extern void SetToLeaderboard(int value);
 
     private PlayerModifier _playerModifier;
 
@@ -44,6 +48,8 @@ public class Shop : MonoBehaviour
             _collectibleManager.SpendMoney(_heightPrice);
             Progress.Instance.PlayerInfo.Coins = _collectibleManager.NumberOfCollectibles;
             Progress.Instance.PlayerInfo.Height += _heightValue;
+
+            SetToLeaderboard(Progress.Instance.PlayerInfo.Height);
 
             _playerModifier.SetHeight(Progress.Instance.PlayerInfo.Height);
         }
