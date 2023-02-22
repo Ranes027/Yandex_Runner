@@ -19,8 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CollectibleManager _collectibleManager;
 
     private void Start()
-    {
-        ShowAdv();
+    {        
         _levelName.text = SceneManager.GetActiveScene().name;
     }
 
@@ -35,6 +34,7 @@ public class GameManager : MonoBehaviour
     public void ShowFinishWindow()
     {
         _finishWindow.SetActive(true);
+        ShowAdv();
     }
 
     public void NextLevel()
